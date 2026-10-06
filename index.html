@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hassan Engineering Works</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        /* HEADER */
+
+        header {
+            background: #101820;
+            color: white;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #f5b400;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f5b400;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #f5b400;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(135deg, #101820, #203746);
+            color: white;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:after {
+            content: "⚙";
+            position: absolute;
+            right: 5%;
+            top: 30px;
+            font-size: 300px;
+            color: rgba(255,255,255,0.04);
+        }
+
+        .hero-content {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h4 {
+            color: #f5b400;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            line-height: 1.05;
+            max-width: 750px;
+        }
+
+        .hero h1 span {
+            color: #f5b400;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            line-height: 1.7;
+            margin: 20px 0;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .call {
+            background: #f5b400;
+            color: black;
+        }
+
+        .whatsapp {
+            background: #20c968;
+            color: white;
+        }
+
+
+        /* VEHICLE DESIGN */
+
+        .vehicle {
+            position: absolute;
+            right: 8%;
+            bottom: 80px;
+            font-size: 120px;
+            z-index: 2;
+        }
+
+
+        /* FEATURES */
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            box-shadow: 0 3px 15px #bbb;
+        }
+
+        .feature {
+            padding: 30px 15px;
+            text-align: center;
+            border-right: 1px solid #ddd;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            color: #666;
+        }
+
+
+        /* GENERAL SECTION */
+
+        section {
+            padding: 70px 5%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .title small {
+            color: #d79d00;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .title h2 {
+            font-size: 40px;
+            margin-top: 8px;
+        }
+
+        .title span {
+            color: #e2a500;
+        }
+
+
+        /* SERVICES */
+
+        #services {
+            background: #101820;
+            color: white;
+        }
+
+        .services {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service {
+            background: white;
+            color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            border-bottom: 5px solid #f5b400;
+        }
+
+        .service-icon {
+            background: linear-gradient(135deg, #f5b400, #ffe08a);
+            padding: 35px;
+            font-size: 70px;
+        }
+
+        .service-content {
+            padding: 25px 15px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* MACHINERY */
+
+        .machine-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .machine {
+            height: 190px;
+            background: linear-gradient(135deg, #263c4b, #f5b400);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .machine-icon {
+            font-size: 90px;
+        }
+
+        .machine-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.85);
+            color: white;
+            padding: 13px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+
+        /* ABOUT */
+
+        #about {
+            background: #101820;
+            color: white;
+        }
+
+        .about {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-picture {
+            height: 350px;
+            background: linear-gradient(135deg, #243b4a, #f5b400);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 130px;
+            border-left: 7px solid #f5b400;
+        }
+
+        .about-text h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 span {
+            color: #f5b400;
+        }
+
+        .about-text p {
+            color: #ddd;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .owner {
+            color: #f5b400 !important;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .check {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .check li {
+            margin: 12px 0;
+            font-weight: bold;
+        }
+
+        .check li:before {
+            content: "✓";
+            color: #f5b400;
+            margin-right: 10px;
+        }
+
+
+        /* CONTACT */
+
+        #contact {
+            background: #f4f4f4;
+        }
+
+        .contact-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-box {
+            background: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 10px;
+            border-top: 5px solid #f5b400;
+            box-shadow: 0 3px 15px #ccc;
+        }
+
+        .contact-box .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box h3 {
+            color: #c18a00;
+            margin-bottom: 10px;
+        }
+
+        .contact-box a {
+            color: #222;
+            font-weight: bold;
+        }
+
+        .contact-box a:hover {
+            color: #c18a00;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #070d12;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer strong {
+            color: #f5b400;
+        }
+
+        .line {
+            width: 100px;
+            height: 3px;
+            background: #f5b400;
+            margin: 15px auto;
+        }
+
+
+        /* MOBILE */
+
+        @media screen and (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 14px;
+            }
+
+            .hero {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .vehicle {
+                display: none;
+            }
+
+            .features {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .machine-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media screen and (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .machine-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-picture {
+                height: 250px;
+                font-size: 90px;
+            }
+
+            .title h2 {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        ⚙️ HASSAN <span>ENGINEERING WORKS</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#machinery">Machinery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h4>PROFESSIONAL ENGINEERING WORKSHOP</h4>
+
+        <h1>
+            HASSAN
+            <span>ENGINEERING WORKS</span>
+        </h1>
+
+        <p>
+            We can repair any type of
+            <strong>Tractors, Cars and Machinery.</strong>
+        </p>
+
+        <p>
+            Quality work • Experienced service • Reliable repairs
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn call" href="tel:03218053952">
+                📞 Call Now
+            </a>
+
+            <a class="btn whatsapp"
+               href="https://wa.me/923108604215">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="vehicle">
+        🚜
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<div class="features">
+
+    <div class="feature">
+        <div class="feature-icon">🔧</div>
+        <h3>Expert Work</h3>
+        <p>Professional mechanical service</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">⚙️</div>
+        <h3>Machinery</h3>
+        <p>Different types of machinery</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🚜</div>
+        <h3>Tractors</h3>
+        <p>Tractor repair and maintenance</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🚗</div>
+        <h3>Cars</h3>
+        <p>Car mechanical repairs</p>
+    </div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="title">
+
+        <small>OUR SERVICES</small>
+
+        <h2>
+            What <span>We Do</span>
+        </h2>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service">
+
+            <div class="service-icon">
+                🚜
+            </div>
+
+            <div class="service-content">
+
+                <h3>Tractor Repair</h3>
+
+                <p>
+                    Complete repair and maintenance
+                    of different types of tractors.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🚗
+            </div>
+
+            <div class="service-content">
+
+                <h3>Car Repair</h3>
+
+                <p>
+                    Mechanical repair and maintenance
+                    for cars and vehicles.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🏗️
+            </div>
+
+            <div class="service-content">
+
+                <h3>Machinery Repair</h3>
+
+                <p>
+                    Repair and maintenance of
+                    different machinery.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="service">
+
+            <div class="service-icon">
+                🔩
+            </div>
+
+            <div class="service-content">
+
+                <h3>Mechanical Work</h3>
+
+                <p>
+                    General mechanical and
+                    engineering services.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MACHINERY -->
+
+<section id="machinery">
+
+    <div class="title">
+
+        <small>MACHINERY</small>
+
+        <h2>
+            What We <span>Repair</span>
+        </h2>
+
+    </div>
+
+
+    <div class="machine-grid">
+
+        <div class="machine">
+            <div class="machine-icon">🚜</div>
+            <div class="machine-name">Tractors</div>
+        </div>
+
+        <div class="machine">
+            <div class="machine-icon">🚗</div>
+            <div class="machine-name">Cars</div>
+        </div>
+
+        <div class="machine">
+            <div class="machine-icon">🚛</div>
+            <div class="machine-name">Heavy Vehicles</div>
+        </div>
+
+        <div class="machine">
+            <div class="machine-icon">🏗️</div>
+            <div class="machine-name">Construction Machinery</div>
+        </div>
+
+        <div class="machine">
+            <div class="machine-icon">🌾</div>
+            <div class="machine-name">Agricultural Machinery</div>
+        </div>
+
+        <div class="machine">
+            <div class="machine-icon">⚙️</div>
+            <div class="machine-name">Industrial Machinery</div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="about">
+
+        <div class="about-picture">
+            👨‍🔧
+        </div>
+
+
+        <div class="about-text">
+
+            <h2>
+                About <span>Our Workshop</span>
+            </h2>
+
+            <p>
+                Welcome to Hassan Engineering Works.
+                We provide repair and engineering services
+                for tractors, cars and machinery.
+            </p>
+
+            <p>
+                Our goal is to provide reliable mechanical
+                work and practical solutions for our customers.
+            </p>
+
+            <p class="owner">
+                Shop Owner: M. Hassan Ustad
+            </p>
+
+            <ul class="check">
+
+                <li>Professional Service</li>
+                <li>Quality Work</li>
+                <li>Reliable Repairs</li>
+                <li>Customer Satisfaction</li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="title">
+
+        <small>GET IN TOUCH</small>
+
+        <h2>
+            Contact <span>Hassan Engineering Works</span>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-box">
+
+            <div class="icon">📞</div>
+
+            <h3>Phone</h3>
+
+            <a href="tel:03218053952">
+                0321 8053952
+            </a>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="icon">💬</div>
+
+            <h3>WhatsApp</h3>
+
+            <a href="https://wa.me/923108604215">
+                0310 8604215
+            </a>
+
+        </div>
+
+
+        <div class="contact-box">
+
+            <div class="icon">📍</div>
+
+            <h3>Our Address</h3>
+
+            <p>
+                Band Road,<br>
+                Near Jamey Mosque,<br>
+                Pishin
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <strong>HASSAN ENGINEERING WORKS</strong>
+
+    <div class="line"></div>
+
+    <p>
+        🚜 Tractor Repair |
+        🚗 Car Repair |
+        ⚙️ Machinery Repair
+    </p>
+
+    <br>
+
+    <p>
+        Band Road, Near Jamey Mosque, Pishin
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Hassan Engineering Works
+    </p>
+
+</footer>
+
+
+</body>
+</html>
